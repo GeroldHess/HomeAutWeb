@@ -41,6 +41,19 @@ public class HomeController : Controller
         return View();
     }
 
+    public IActionResult DelItems()
+    {
+        MySql.Data.MySqlClient.MySqlConnection con = new MySqlConnection(connectin);
+        con.Open();
+        MySqlCommand command;
+        
+        command = new MySqlCommand("homeaut.prc_TempValue_OldItems");
+        command.CommandType = CommandType.StoredProcedure;
+        command.Connection = con;
+        command.ExecuteNonQuery();
+        return Content("ok");
+    }
+    
     public IActionResult Privacy()
     {
         return View();
