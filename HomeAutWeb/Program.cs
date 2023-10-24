@@ -6,7 +6,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
-
 // Configure the HTTP request pipeline.
 
 if (!app.Environment.IsDevelopment())
@@ -18,6 +17,8 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+app.Urls.Add("http://+:3030");
+//app.Urls.Add("https://+:3040");
 
 app.UseRouting();
 
@@ -28,3 +29,5 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
+

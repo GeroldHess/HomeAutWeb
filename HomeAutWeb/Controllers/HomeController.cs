@@ -25,7 +25,7 @@ public class HomeController : Controller
         MySql.Data.MySqlClient.MySqlConnection con = new MySqlConnection(connectin);
         con.Open();
         MySqlCommand command;
-        command = new MySqlCommand("select * from homeaut.vw_selectAll15min");
+        command = new MySqlCommand("select * from homeaut.vw_TempTop");
         command.Connection = con;
         MySqlDataReader reader = command.ExecuteReader();
         if (reader.HasRows)

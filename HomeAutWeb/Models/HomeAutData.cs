@@ -24,7 +24,7 @@ public class TempValue
         this.ID = System.Convert.ToInt64(Reader["ID"]);
         this.insertedon = System.Convert.ToDateTime(Reader["insertedon"]);
         this.Geraet = Reader["Geraet"].ToString();
-        this.Status = System.Convert.ToInt32(Reader["Status"]);
+        this.Status = 0;
         this.Temperatur = System.Convert.ToDecimal(Reader["Temperatur"]);
     }
 }

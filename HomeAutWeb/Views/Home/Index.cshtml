@@ -3,29 +3,31 @@
   int lfnr = 0;
 }
 
+<div class="container-sm">
 <div class="text-center">
- <table class="table table-striped">
-   <thead class="thead-dark">
-   <tr>
-     <th scope="col">Nr</th>
-     <th scope="col">Zeitpunkt</th>
-     <th scope="col">Gerät</th>
-     <th scope="col">Wert</th>
-     <th scope="col">Status</th>
-   </tr>
-   </thead>
-   <tbody>
-   @foreach (HomeAutWeb.Models.TempValue t in ViewBag.Werte)
-   {
-     lfnr++;
-     <tr>
-       <th>@lfnr</th>
-       <th scope="row">@t.insertedon</th>
-       <td>@t.Geraet</td>
-       <td>@t.Temperatur</td>
-       <td>@t.Status</td>
-     </tr>
-   }
-   </tbody>
- </table>
+  <table class="table table-striped">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">Nr</th>
+      <th scope="col">Zeitpunkt</th>
+      <th scope="col">Gerät</th>
+      <th scope="col">Wert</th>
+      @*<th scope="col">Status</th>*@
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (HomeAutWeb.Models.TempValue t in ViewBag.Werte)
+    {
+      lfnr++;
+      <tr>
+        <th>@lfnr</th>
+        <th scope="row">@t.insertedon</th>
+        <td>@t.Geraet</td>
+        <td>@t.Temperatur</td>
+        @*<td>@t.Status</td>*@
+      </tr>
+    }
+    </tbody>
+  </table>
+</div>
 </div>
